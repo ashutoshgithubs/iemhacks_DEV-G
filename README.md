@@ -46,14 +46,14 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
   <tr>
     <td align="center">
       <a href="https://github.com/BipulRahi">
-        <img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/23020f4116ec211e3761881046a5bb21116f52e1/IMG_20230403_054813975.jpg" width="100px;" alt="Bipul Rahi"/><br />
+        <img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/23020f4116ec211e3761881046a5bb21116f52e1/IMG_20230403_054813975.jpg" tyle="border-radius:100%" width="100px;" alt="Bipul Rahi"/><br />
         <sub><b>Bipul Rahi</b></b></sub><br>
         <p>Backend Developer</p>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/ashutoshgithubs">
-        <img src="https://avatars.githubusercontent.com/u/97340498?v=4" width="100px;" alt="Ashutosh "/><br />
+        <img src="https://avatars.githubusercontent.com/u/97340498?v=4" tyle="border-radius:100%" width="100px;" alt="Ashutosh "/><br />
         <sub><b>Ashutosh Kumar</b></sub><br>
         <p> MERN  Stack Developer  </p>
       </a>
