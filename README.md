@@ -40,5 +40,6 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
 - Hashing Algorithms: SHA-256 is employed to securely hash sensitive data like passwords.
 - HMAC Algorithm: HMAC (Hash-based Message Authentication Code) ensures data integrity and authenticity.
 
-
+## Glimpse of DEV_G
+<img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/a48e0dad43a405cc60c20c2509f03d50dc360f56/home%20page.jpeg" alt="Home page">
 *Thank you for being a part of the DEV-G EdTech project.*
