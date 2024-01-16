@@ -4,7 +4,7 @@
 
 Welcome to the README for the DEV-G EdTech project developed during the IEMHACKS hackathon. This project is a comprehensive MERN Stack application that focuses on creating a seamless learning experience for users, instructors, and administrators. It incorporates robust security measures to ensure the protection of user data. Below, you'll find an overview of the project, its features, technologies used, setup instructions, security measures, and payment gateway integration details.
 
-## Live Link: https://dev-g.vercel.app/
+## Live Link: edtech-dev-g-frontend.vercel.app
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -41,29 +41,6 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
 - OTP Verification: User accounts are verified using one-time passwords during registration.
 - Hashing Algorithms: SHA-256 is employed to securely hash sensitive data like passwords.
 - HMAC Algorithm: HMAC (Hash-based Message Authentication Code) ensures data integrity and authenticity.
-
-## Meet Our team
-
-<table>
-  <tr>
-<!--     <td align="center">
-      <a href="https://github.com/BipulRahi">
-        <img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/23020f4116ec211e3761881046a5bb21116f52e1/IMG_20230403_054813975.jpg" tyle="border-radius:100%" width="100px;" alt="Bipul Rahi"/><br />
-        <sub><b>Bipul Rahi</b></b></sub><br>
-        <p>Backend Developer</p>
-      </a>
-    </td> -->
-    <td align="center">
-      <a href="https://github.com/ashutoshgithubs">
-        <img src="https://avatars.githubusercontent.com/u/97340498?v=4" tyle="border-radius:100%" width="100px;" alt="Ashutosh "/><br />
-        <sub><b>Ashutosh Kumar</b></sub><br>
-        <p> MERN  Stack Developer  </p>
-      </a>
-    </td>
-    
-  </tr>
-</table>
-
 
 
 ## Glimpse of DEV_G
