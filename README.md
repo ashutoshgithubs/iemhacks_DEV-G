@@ -2,9 +2,8 @@
 ![Alt Text](https://github.com/BipulRahi/iemhacks_DEV-G/blob/main/programmer.gif)
 # DEV-G EdTech Project
 
-Welcome to the README for the DEV-G EdTech project developed during the IEMHACKS hackathon. This project is a comprehensive MERN Stack application that focuses on creating a seamless learning experience for users, instructors, and administrators. It incorporates robust security measures to ensure the protection of user data. Below, you'll find an overview of the project, its features, technologies used, setup instructions, security measures, and payment gateway integration details.
+Welcome to the README for the DEV-G EdTech project. This project is a comprehensive MERN Stack application that focuses on creating a seamless learning experience for users, instructors, and administrators. It incorporates robust security measures to ensure the protection of user data. Below, you'll find an overview of the project, its features, technologies used, setup instructions, security measures, and payment gateway integration details.
 
-## Live Link: edtech-dev-g-frontend.vercel.app
 
 ## Table of Contents
 - [Introduction](#introduction)
