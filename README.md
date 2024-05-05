@@ -43,11 +43,52 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
 ## Glimpse of DEV_G
 <img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/a48e0dad43a405cc60c20c2509f03d50dc360f56/home%20page.jpeg" alt="Home page">
 <br>
+
 ## 🤠 Project Admin 
 
-<a href="https://github.com/ashugithubs"><img src="https://res.cloudinary.com/anand-dev-12/image/upload/v1714926145/uvafix3xrdxflzjfxehc.jpg" height="80px"/></a>
-## Contributing
-- Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+<a href="https://github.com/ashutoshgithubs"><img src="https://res.cloudinary.com/anand-dev-12/image/upload/c_crop,w_700,h_700,ar_1:1,g_auto/v1714926145/uvafix3xrdxflzjfxehc.jpg" height="100px"/></a>
+# ✴️ Contribution Guide
+
+## Fork the Repository
+
+First, fork the repository to your GitHub account by clicking on the "Fork" button at the top-right corner of the repository page.
+
+## Set Up the Project
+
+After forking the repository, clone it to your local machine and install dependencies:
+
+
+Then, start the project.
+
+
+Create your account on the website by signing up and become familiar with the interface and behaviour of the backend.
+
+## Create a New Branch
+
+Before making any changes, create a new branch for your contributions:
+
+
+## Work on Issues
+
+You can either create a new issue to request changes or work on existing issues. If you choose to work on an existing issue, comment on it to get assigned the `gssoc24` label.
+
+## Make Changes and Commit
+
+Make your changes, stage them, and commit with descriptive messages:
+
+
+## Push Changes to Your Fork
+
+Push your changes to your forked repository:
+
+
+## Create a Pull Request
+
+Once your changes are pushed, create a pull request by visiting your forked repository on GitHub. Compare and select the appropriate branches, give your PR a descriptive title and description, and submit it for review.
+
+## Review and Merge
+
+Your pull request will be reviewed by the project admin (i.e. me) or project mentor. Make any requested changes and wait for approval. Once approved, your branch will be merged into the main codebase.
   <br>
 
   ## <center>This Project is participating in GSSoC24</center>
