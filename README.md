@@ -46,4 +46,5 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
 
 ## Contributing
 - Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+  <br>
 *Thank you for being a part of the DEV-G EdTech project.*
