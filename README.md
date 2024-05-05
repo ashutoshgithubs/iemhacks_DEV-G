@@ -1,8 +1,8 @@
-
+![image](https://github.com/ashutoshgithubs/iemhacks_DEV-G/assets/97340498/eaa160cd-1572-4351-ab35-004a1e2da9ef)
 ![Alt Text](https://github.com/BipulRahi/iemhacks_DEV-G/blob/main/programmer.gif)
 # DEV-G EdTech Project
 
-Welcome to the README for the DEV-G EdTech project. This project is a comprehensive MERN Stack application that focuses on creating a seamless learning experience for users, instructors, and administrators. It incorporates robust security measures to ensure the protection of user data. Below, you'll find an overview of the project, its features, technologies used, setup instructions, security measures, and payment gateway integration details.
+Welcome to the README for the DEV-G EdTech project. This is a fully functional ed-tech platform that enables users to create, consume, and rate educational content. The platform is built using the MERN stack, which includes ReactJS, NodeJS, MongoDB, and ExpressJS. It aims to provide: ◉ A seamless and interactive learning experience for students, making education more accessible and engaging. ◉ A platform for instructors to showcase their expertise and connect with learners across the globe.
 
 ## Live Link: https://edtech-dev-g-frontend.vercel.app/
 ## Table of Contents
@@ -41,7 +41,8 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
 - Hashing Algorithms: SHA-256 is employed to securely hash sensitive data like passwords.
 - HMAC Algorithm: HMAC (Hash-based Message Authentication Code) ensures data integrity and authenticity.
 
-
+## Contributing
+- Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
 ## Glimpse of DEV_G
 <img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/a48e0dad43a405cc60c20c2509f03d50dc360f56/home%20page.jpeg" alt="Home page">
 <br>
