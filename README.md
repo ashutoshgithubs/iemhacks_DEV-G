@@ -43,8 +43,14 @@ The DEV-G EdTech project is an innovative solution aimed at revolutionizing onli
 ## Glimpse of DEV_G
 <img src="https://github.com/BipulRahi/iemhacks_DEV-G/blob/a48e0dad43a405cc60c20c2509f03d50dc360f56/home%20page.jpeg" alt="Home page">
 <br>
+## 🤠 Project Admin 
 
+<a href="https://github.com/ashugithubs"><img src="[https://imgur.com/av7nYpM.png](https://avatars.githubusercontent.com/u/97340498?v=4)" height="80px"/></a>
 ## Contributing
 - Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
   <br>
+
+  ## <center>This Project is participating in GSSoC23</center>
+
+<img src="https://imgur.com/wuiJXqr.png"/>
 *Thank you for being a part of the DEV-G EdTech project.*
