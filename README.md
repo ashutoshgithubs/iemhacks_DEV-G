@@ -38,9 +38,13 @@ This is a fully functional ed-tech platform that enables users to create, consum
 <center><img src="https://i.ibb.co/vv7yddc/pr4.png" alt="pr4" border="0"></center>
 <center><img src="https://i.ibb.co/p3yXD7W/pr1.png" alt="pr1" border="0"></center>
 <center><img src="https://i.ibb.co/qkvZLJ9/pr3.png" alt="pr3" border="0"></center>
+<center><img src="https://i.ibb.co/sHqKxLN/Whats-App-Image-2024-05-06-at-02-17-39-49e7503b.jpg" alt="Whats-App-Image-2024-05-06-at-02-17-39-49e7503b" border="0"></center>
 <center><img src="https://i.ibb.co/WBjr6NM/pr2.png" alt="pr2" border="0"></center>
 <center><img src="https://i.ibb.co/54jmYhp/pr6.png" alt="pr6" border="0"></center>
 <br/>
+<br/>
+ 🎥 Video Demonstration : 
+<center><a href="https://drive.google.com/file/d/1dXLRGeSoxf5IYxxCEjskBlEI_qRBvcoV/view" alt="vdo" style="text-decoration: none;" target="_blank"> Dev-G</a></center>
 
 # Features🌟 <a name="features"></a>
 
@@ -68,7 +72,7 @@ This is a fully functional ed-tech platform that enables users to create, consum
   
 ### Payment Gateway:
 
-- **Razorpay**: Integrated for secure payment processing.
+- **Razorpay**: Integrated for secure payment processing ( Use UPI ID: "success@razorpay" for dummy payment process).
 
 
 ## 🎯 Future Scope <a name="future"></a>
