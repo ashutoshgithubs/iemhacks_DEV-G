@@ -171,4 +171,4 @@ Your pull request will be reviewed by the project admin (i.e. me) or project men
 <img src="https://imgur.com/wuiJXqr.png"/>
 *Thank you for being a part of the DEV-G EdTech project.*
 
-<p align="right">(<a href="#top">Back to top</a>)</p>
+<p align="right"><a href="#top">Back to top ⬆</a></p>
