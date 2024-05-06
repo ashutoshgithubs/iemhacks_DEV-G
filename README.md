@@ -120,7 +120,7 @@ cd ../client && npm start
 </a>
 
 
-# ✴️ Contribution Guide <a name="contribution"></a>
+# ✴️ Contribution Guidelines <a name="contribution"></a>
 
 ## Fork the Repository
 
