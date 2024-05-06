@@ -35,11 +35,11 @@ This is a fully functional ed-tech platform that enables users to create, consum
 ### Live Link : https://edtech-dev-g-frontend.vercel.app/
 
 </p>
-<center><a href="https://ibb.co/Xkh055W"><img src="https://i.ibb.co/vv7yddc/pr4.png" alt="pr4" border="0"></a></center>
-<center><a href="https://ibb.co/P5QCpLT"><img src="https://i.ibb.co/p3yXD7W/pr1.png" alt="pr1" border="0"></a></center>
-<center><a href="https://ibb.co/0hxwpsZ"><img src="https://i.ibb.co/qkvZLJ9/pr3.png" alt="pr3" border="0"></a></center>
-<center><a href="https://ibb.co/6DLKmcT"><img src="https://i.ibb.co/WBjr6NM/pr2.png" alt="pr2" border="0"></a></center>
-<center><a href="https://ibb.co/V9CRHYn"><img src="https://i.ibb.co/54jmYhp/pr6.png" alt="pr6" border="0"></a></center>
+<center><img src="https://i.ibb.co/vv7yddc/pr4.png" alt="pr4" border="0"></center>
+<center><img src="https://i.ibb.co/p3yXD7W/pr1.png" alt="pr1" border="0"></center>
+<center><img src="https://i.ibb.co/qkvZLJ9/pr3.png" alt="pr3" border="0"></center>
+<center><img src="https://i.ibb.co/WBjr6NM/pr2.png" alt="pr2" border="0"></center>
+<center><img src="https://i.ibb.co/54jmYhp/pr6.png" alt="pr6" border="0"></center>
 <br/>
 
 # Features🌟 <a name="features"></a>
@@ -166,7 +166,7 @@ Your pull request will be reviewed by the project admin (i.e. me) or project men
   <br>
 
   
-# <center>This Project is a of GSSoC'24</center>
+# <center>This Project is a part of GSSoC'24</center>
 
 <img src="https://imgur.com/wuiJXqr.png"/>
 *Thank you for being a part of the DEV-G EdTech project.*
