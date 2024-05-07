@@ -205,11 +205,11 @@ export default function TopHome() {
             transition={{ type: "spring", stiffness: 300 }}
             className=" text-richblack-100  text-4xl sm:text-[3.75rem] font-semibold mb-3 text-center mx-auto"
           >
-            <span className="flex gap-2 text-center">
+            <div className="flex gap-2 text-center">
               {" "}
               WELCOME TO
               <HighlightedText text={"DEV-G"} />
-            </span>
+            </div>
           </motion.p>
           <motion.h1
             variants={containerVariants2}
