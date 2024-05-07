@@ -67,7 +67,7 @@ const otpTemplate = (otp) => {
 	<body>
 		<div class="container">
 			<a href="/"><img class="logo"
-					src="https://res.cloudinary.com/dy4lvqyuv/image/upload/v1690910300/Ashutosh/qf5xxhht592oo9m5k9hq.png" alt="StudyNotion Logo"></a>
+					src="https://res.cloudinary.com/dy4lvqyuv/image/upload/v1690910300/Ashutosh/qf5xxhht592oo9m5k9hq.png" alt="devg Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
 				<p>Dear User,</p>
