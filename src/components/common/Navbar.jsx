@@ -47,7 +47,7 @@ export default function Navbar() {
       setLoading(true);
       try {
         const response = await apiConnector("GET", category.CATEGORY_API);
-        //console.log("Category response print here : ", response);
+        console.log("Category response print here : ", response.data.data);
         setSubLinks(response.data.data);
       } catch (error) {
         console.log("Could not fetch Categories.", error);
@@ -74,7 +74,7 @@ export default function Navbar() {
                       <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                       {loading ? (
                         <p className="text-center">Loading...</p>
-                      ) : subLinks.length ? (
+                      ) : subLinks?.length ? (
                         <>
                           {subLinks
                             ?.filter((subLink) => subLink?.course?.length > 0)
