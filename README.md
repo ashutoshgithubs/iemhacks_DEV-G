@@ -96,10 +96,10 @@ To set up the project, follow these steps:
    git clone https://github.com/ashutoshgithubs/iemhacks_DEV-G.git
 
 2. **Navigate to the project directory:**
-		cd iemhacks_DEV-G 
+		`cd iemhacks_DEV-G`
 
-3. **Install dependencies:**:
-   npm install
+3. **Install dependencies:**
+   `npm install`
 4.  **Configure environment variables:**
     
     -   Rename `.env.sample` to `.env`.
@@ -107,7 +107,7 @@ To set up the project, follow these steps:
  
 
 5. **Start the script:** 
-	npm run dev (This command will run both frontend and backend)
+	`npm run dev` ( This command will run both client ( src ) and server ).
 
 
 6.  **Access the application** in your web browser at [http://localhost:3000](http://localhost:3000/).
