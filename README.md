@@ -96,23 +96,21 @@ To set up the project, follow these steps:
    git clone https://github.com/ashutoshgithubs/iemhacks_DEV-G.git
 
 2. **Navigate to the project directory:**
-		cd dev-g-edtech
+		cd iemhacks_DEV-G 
 
-3. **Install dependencies for the server:**:
-   cd server && npm install
+3. **Install dependencies:**:
+   npm install
 4.  **Configure environment variables:**
     
-    -   Rename `.env.example` to `.env`.
+    -   Rename `.env.sample` to `.env`.
     -   Fill in your configuration details in the `.env` file.
  
 
-5. **Start the server:** 
-	cd ../server && npm start
+5. **Start the script:** 
+	npm run dev (This command will run both frontend and backend)
 
-5. **Start the client:** 
-cd ../client && npm start
 
-7.  **Access the application** in your web browser at [http://localhost:3000](http://localhost:3000/).
+6.  **Access the application** in your web browser at [http://localhost:3000](http://localhost:3000/).
 
 
 
