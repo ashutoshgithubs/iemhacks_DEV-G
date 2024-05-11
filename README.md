@@ -171,6 +171,10 @@ Your pull request will be reviewed by the project admin (i.e. me) or project men
 # <center>This Project is a part of GSSoC'24</center>
 
 <img src="https://imgur.com/wuiJXqr.png"/>
-*Thank you for being a part of the DEV-G EdTech project.*
+
+## 🙏 Support
+
+Don't forget to leave a star ⭐️ for this project! <br/>
+*Thank you for being a part of the DEV-G.*
 
 <p align="right"><a href="#top">Back to top ⬆</a></p>
