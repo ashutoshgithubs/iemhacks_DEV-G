@@ -11,7 +11,7 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
         currentCard === cardData?.heading
           ? "bg-white shadow-[12px_12px_0_0] shadow-yellow-50"
           : "bg-richblack-800"
-      }  text-richblack-25 h-[300px] box-border cursor-pointer`}
+      }  text-richblack-25 h-[300px] box-border cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg dark:hover:shadow-black/30`}
       onClick={() => setCurrentCard(cardData?.heading)}
     >
       <div className="border-b-[2px] border-richblack-400 border-dashed h-[80%] p-6 flex flex-col gap-3">
@@ -31,7 +31,7 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
           currentCard === cardData?.heading
             ? "text-blue-300"
             : "text-richblack-300"
-        } px-6 py-3 font-medium`}
+        } px-6 py-3 font-medium hover:text-blue-400`}
       >
         {/* Level */}
         <div className="flex items-center gap-2 text-[16px]">
@@ -42,7 +42,7 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
         {/* Flow Chart */}
         <div className="flex items-center gap-2 text-[16px]">
           <ImTree />
-          <p>{cardData?.lessionNumber} Lession</p>
+          <p>{cardData?.lessionNumber} Lesson</p>
         </div>
       </div>
     </div>
