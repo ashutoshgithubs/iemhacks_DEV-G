@@ -37,7 +37,7 @@ export default function Navbar() {
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const [isClose, setIsClose] = useState(false);
+  var [isClose, setIsClose] = useState(false);
   const handleCrossButton = () => {
     isClose = isClose ? setIsClose(false) : setIsClose(true);
     // smallScreen = smallScreen ? setSmallScreen(false) : setSmallScreen(true);

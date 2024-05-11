@@ -174,7 +174,7 @@ export default function TopHome() {
   const handleMouseEnter4 = () => setIsHovered4(true);
   const handleMouseLeave4 = () => setIsHovered4(false);
   return (
-    <div className="text-white flex flex-col max-w-maxContent h-[100vh] relative">
+    <div className="text-white flex flex-col h-screen">
       <motion.div
         drag
         dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
@@ -194,7 +194,7 @@ export default function TopHome() {
           loading="lazy"
         />
       </motion.div>
-      <div className="flex flex-col w-11/12 md:w-full lg:max-w-[790px] text-center justify-center  mx-auto my-auto gap-4">
+      <div className="flex flex-col w-11/12  md:w-full lg:max-w-[790px] text-center justify-center py-5 mx-auto my-auto gap-4">
         <div className="flex flex-col w-full lg:max-w-[790px] text-center justify-center  mx-auto my-auto gap-4">
           <motion.p
             variants={containerVariants}
@@ -205,7 +205,7 @@ export default function TopHome() {
             transition={{ type: "spring", stiffness: 300 }}
             className=" text-richblack-100  text-4xl sm:text-[3.75rem] font-semibold mb-3 text-center mx-auto"
           >
-            <div className="flex gap-2 text-center">
+            <div className="flex sm:flex-col md:flex-row sm:gap-10 gap-2 text-center py-10">
               {" "}
               WELCOME TO
               <HighlightedText text={"DEV-G"} />
@@ -241,7 +241,7 @@ export default function TopHome() {
           initial="hidden"
           animate="visible"
           exit="exit"
-          whileHover={{ scale: 1.3, originX: 0, color: "#f8e112" }}
+          // whileHover={{ scale: 1.3, originX: 0, color: "#f8e112" }}
           transition={{ type: "spring", stiffness: 300 }}
         >
           <motion.div
@@ -429,7 +429,7 @@ export default function TopHome() {
         </motion.div>
       </div>
       <div className="text-end text-sm text-richblack-200 font-edu-sa">
-        <p className="p-2">Developed by Ashutosh Kumar © 2024 DEV-G</p>
+        <p className="p-2 ">Developed by Ashutosh Kumar © 2024 DEV-G</p>
       </div>
     </div>
   );
