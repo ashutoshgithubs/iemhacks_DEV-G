@@ -154,16 +154,22 @@ function App() {
 
       {pathname !== "/" && (
         <motion.button
-          whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
-          transition={{ type: "spring", stiffness: 200 }}
-          style={{ position: "fixed", bottom: 16, right: 20 }}
-          className="bg-[#766c82] text-white font-medium p-2 text-white100 px-6 rounded-l-full
- rounded-t-full drop-shadow-xl fixed bottom-4 right-4 z-[10000000]
- flex items-center gap-x-3"
-          onClick={() => navigate("/contact")}
-        >
-          🤔Facing an issue?
-        </motion.button>
+        whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
+        transition={{ type: "spring", stiffness: 200 }}
+        style={{
+          position: "fixed",
+          bottom: 16, 
+          right: 20, 
+          zIndex: 10000000,
+        }}
+        className="bg-[#766c82] t
+        ext-white font-medium p-2 text-white100 px-6 rounded-l-full
+        rounded-t-full drop-shadow-xl flex items-center gap-x-3"
+        onClick={() => navigate("/contact")}
+      >
+        🤔Facing an issue?
+      </motion.button>
+      
       )}
     </div>
   );
