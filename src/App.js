@@ -162,8 +162,8 @@ function App() {
           right: 20, 
           zIndex: 10000000,
         }}
-        className="bg-[#766c82] t
-        ext-white font-medium p-2 text-white100 px-6 rounded-l-full
+        className="bg-[#766c82] 
+        text-white font-medium p-2 text-white100 px-6 rounded-l-full
         rounded-t-full drop-shadow-xl flex items-center gap-x-3"
         onClick={() => navigate("/contact")}
       >
