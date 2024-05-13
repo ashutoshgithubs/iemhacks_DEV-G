@@ -174,7 +174,7 @@ export default function TopHome() {
   const handleMouseEnter4 = () => setIsHovered4(true);
   const handleMouseLeave4 = () => setIsHovered4(false);
   return (
-    <div className="text-white flex flex-col max-w-maxContent h-[100vh] relative">
+    <div className="text-white flex flex-col h-[100vh] relative">
       <motion.div
         drag
         dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
