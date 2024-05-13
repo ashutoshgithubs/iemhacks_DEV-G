@@ -10,6 +10,7 @@ const {
   UPDATE_PROFILE_API,
   CHANGE_PASSWORD_API,
   DELETE_PROFILE_API,
+  REMOVE_DISPLAY_PICTURE_API
 } = settingsEndpoints;
 
 export function updateDisplayPicture(token, formData) {
@@ -42,6 +43,32 @@ export function updateDisplayPicture(token, formData) {
     } catch (error) {
       console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error);
       toast.error("Could Not Update Display Picture");
+    }
+    toast.dismiss(toastId);
+  };
+}
+
+export function removeProfilePicture(token) {
+  return async (dispatch) => {
+    const toastId = toast.loading("Loading...");
+    
+    try {
+      const response = await apiConnector(
+        "PUT",
+        REMOVE_DISPLAY_PICTURE_API,
+        "",
+        {
+          Authorization: `Bearer ${token}`,
+        }
+      );
+    
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      toast.success("Display Picture Removed Successfully");
+      dispatch(setUser(response.data.data));
+    } catch (error) {
+      toast.error("Could Not Remove Display Picture");
     }
     toast.dismiss(toastId);
   };

@@ -147,6 +147,29 @@ exports.updateDisplayPicture = async (req, res) => {
   }
 };
 
+exports.removeProfilePicture = async (req, res) => {
+  try {
+    const user = await User.findById({_id : req.user.id});
+    const updatedProfile = await User.findByIdAndUpdate(
+      { _id: req.user.id },
+      { image: `https://api.dicebear.com/5.x/initials/svg?seed=${user.firstName} ${user.lastName}`},
+      { new: true }
+    );
+    
+    res.send({
+      success: true,
+      message: `Image Removed successfully`,
+      data: updatedProfile,
+    });
+  } catch (error) {
+    console.log("Image removing error: ", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+}
+
 exports.getEnrolledCourses = async (req, res) => {
   try {
     const userId = req.user.id;
