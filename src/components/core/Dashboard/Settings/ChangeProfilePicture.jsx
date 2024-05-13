@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
-import { RxCross2 } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
-import { updateDisplayPicture, removeProfilePicture } from "../../../../services/operations/settingsApi";
+import { updateDisplayPicture } from "../../../../services/operations/settingsApi";
 import { AiOutlineSelect } from "react-icons/ai";
 
 export default function ChangeProfilePicture() {
@@ -54,14 +53,6 @@ export default function ChangeProfilePicture() {
     }
   };
 
-  const handleRemoveProfilePicture = () => {
-    try {
-      dispatch(removeProfilePicture(token));
-    } catch(error) {
-      console.log(error)
-    }
-  }
-
   useEffect(() => {
     if (imageFile) {
       previewFile(imageFile);
@@ -102,13 +93,6 @@ export default function ChangeProfilePicture() {
                 {!loading && (
                   <FiUpload className="text-md text-richblack-900" />
                 )}
-              </button>
-              <button
-                onClick={handleRemoveProfilePicture}
-                className="flex gap-x-1 items-center cursor-pointer rounded-md py-2 px-3 font-semibold text-richblack-900 border border-yellow-50 bg-yellow-50 hover:scale-95 transition-all duration-200"
-              >
-                Remove
-                  <RxCross2 className="text-md text-richblack-900" />
               </button>
             </div>
           </div>

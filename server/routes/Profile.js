@@ -8,7 +8,6 @@ const {
   updateDisplayPicture,
   getEnrolledCourses,
   instructorDashboard,
-  removeProfilePicture
 } = require("../controllers/Profile");
 
 router.put("/updateProfile", auth, updateProfile);
@@ -17,6 +16,5 @@ router.get("/getUserDetails", auth, getUserDetails);
 router.get("/getEnrolledCourses", auth, getEnrolledCourses);
 router.put("/updateDisplayPicture", auth, updateDisplayPicture);
 router.get("/instructorDashboard", auth, isInstructor, instructorDashboard);
-router.put("/removeProfilePicture", auth, removeProfilePicture);
 
 module.exports = router;

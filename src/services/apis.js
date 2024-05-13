@@ -32,7 +32,6 @@ export const settingsEndpoints = {
   UPDATE_PROFILE_API: BASE_URL + "/profile/updateProfile",
   CHANGE_PASSWORD_API: BASE_URL + "/auth/changePassword",
   DELETE_PROFILE_API: BASE_URL + "/profile/deleteAccount",
-  REMOVE_DISPLAY_PICTURE_API: BASE_URL + "/profile/removeProfilePicture"
 };
 
 // COURSE ENDPOINTS
