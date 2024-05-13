@@ -2,7 +2,7 @@
 
 If you've got the coding idea and want to contribute to DEV-G EdTech's development, this section provides guidelines on how to fork the repository, create branches, and submit pull requests.
 
-- Find  issues labeled by other contributers and the project admin   visit in our [issue tracker](https://github.com/ashutoshgithubs/iemhacks_DEV-G/issues) to start contributing. you can also create your own issue from your end if you find such issue 
+- Find  issues labeled by other contributers and the project admin.  Visit in our [issue tracker](https://github.com/ashutoshgithubs/iemhacks_DEV-G/issues) to start contributing. You can also create your own issue from your end if you find such issue 
 
 ***Make Your Changes:***
 -   Now you're ready to dive into the code! Open the project in your favorite code editor.
