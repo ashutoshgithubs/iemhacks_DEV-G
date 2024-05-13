@@ -96,23 +96,21 @@ To set up the project, follow these steps:
    git clone https://github.com/ashutoshgithubs/iemhacks_DEV-G.git
 
 2. **Navigate to the project directory:**
-		cd dev-g-edtech
+		`cd iemhacks_DEV-G`
 
-3. **Install dependencies for the server:**:
-   cd server && npm install
+3. **Install dependencies:**
+   `npm install`
 4.  **Configure environment variables:**
     
-    -   Rename `.env.example` to `.env`.
+    -   Rename `.env.sample` to `.env`.
     -   Fill in your configuration details in the `.env` file.
  
 
-5. **Start the server:** 
-	cd ../server && npm start
+5. **Start the script:** 
+	`npm run dev` ( This command will run both client ( src ) and server ).
 
-5. **Start the client:** 
-cd ../client && npm start
 
-7.  **Access the application** in your web browser at [http://localhost:3000](http://localhost:3000/).
+6.  **Access the application** in your web browser at [http://localhost:3000](http://localhost:3000/).
 
 
 
@@ -173,6 +171,10 @@ Your pull request will be reviewed by the project admin (i.e. me) or project men
 # <center>This Project is a part of GSSoC'24</center>
 
 <img src="https://imgur.com/wuiJXqr.png"/>
-*Thank you for being a part of the DEV-G EdTech project.*
+
+## 🙏 Support
+
+Don't forget to leave a star ⭐️ for this project! <br/>
+*Thank you for being a part of the DEV-G.*
 
 <p align="right"><a href="#top">Back to top ⬆</a></p>
