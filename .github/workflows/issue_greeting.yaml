@@ -1,0 +1,15 @@
+name: issue_Greetings
+
+on: [issues]
+
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: KeisukeYamashita/create-comment@v1
+        with:
+          comment: |
+            Thank you for bringing this issue to our attention.
+            We will review the issue raised and get back to you shortly.
