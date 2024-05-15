@@ -48,6 +48,11 @@ function App() {
 
   const [isVisible, setisVisible] = useState(false);
 
+  const handleFacingIssue = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/contact")
+  }
+
   const scrollToTop =() => {
     if (window.scrollY > 200) {
       setisVisible(true);
@@ -190,7 +195,7 @@ function App() {
         className="bg-[#766c82] 
         text-white font-medium p-2 text-white100 px-6 rounded-l-full
         rounded-t-full drop-shadow-xl flex items-center gap-x-3"
-        onClick={() => navigate("/contact")}
+        onClick={handleFacingIssue}
       >
         🤔Facing an issue?
       </motion.button>
