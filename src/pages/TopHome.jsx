@@ -205,7 +205,7 @@ export default function TopHome() {
             transition={{ type: "spring", stiffness: 300 }}
             className=" text-richblack-100  text-4xl sm:text-[3.75rem] font-semibold mb-3 text-center mx-auto"
           >
-            <div className="flex gap-2 text-center">
+            <div className="flex gap-2 text-center sm:flex-col sm:gap-5 md:flex-row">
               {" "}
               WELCOME TO
               <HighlightedText text={"DEV-G"} />
