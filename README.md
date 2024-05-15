@@ -172,6 +172,14 @@ Your pull request will be reviewed by the project admin (i.e. me) or project men
 
 <img src="https://imgur.com/wuiJXqr.png"/>
 
+## Contributors 🌟
+
+Thanks goes to these wonderful people ✨✨:
+
+<a href="https://github.com/ashutoshgithubs/iemhacks_DEV-G/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ashutoshgithubs/iemhacks_DEV-G" />
+</a>
+
 ## 🙏 Support
 
 Don't forget to leave a star ⭐️ for this project! <br/>
