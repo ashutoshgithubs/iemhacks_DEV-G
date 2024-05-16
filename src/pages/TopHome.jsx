@@ -174,7 +174,7 @@ export default function TopHome() {
   const handleMouseEnter4 = () => setIsHovered4(true);
   const handleMouseLeave4 = () => setIsHovered4(false);
   return (
-    <div className="text-white flex flex-col max-w-maxContent h-[100vh] relative">
+    <div className="text-white flex flex-col w-full h-[100vh] relative">
       <motion.div
         drag
         dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
@@ -205,7 +205,7 @@ export default function TopHome() {
             transition={{ type: "spring", stiffness: 300 }}
             className=" text-richblack-100  text-4xl sm:text-[3.75rem] font-semibold mb-3 text-center mx-auto"
           >
-            <div className="flex gap-2 text-center">
+            <div className="flex gap-2 text-center sm:flex-col sm:gap-5 md:flex-row">
               {" "}
               WELCOME TO
               <HighlightedText text={"DEV-G"} />

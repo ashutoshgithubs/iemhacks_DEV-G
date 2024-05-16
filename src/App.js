@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FaArrowUp } from "react-icons/fa";
 import Home from "./pages/Home";
 import Navbar from "../src/components/common/Navbar";
 import OpenRoute from "./components/core/auth/OpenRoute";
@@ -44,6 +45,28 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const { pathname } = useLocation();
+
+  const [isVisible, setisVisible] = useState(false);
+
+  const handleFacingIssue = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/contact")
+  }
+
+  const scrollToTop =() => {
+    if (window.scrollY > 200) {
+      setisVisible(true);
+    } else {
+      setisVisible(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollToTop);
+    return () => {
+      window.removeEventListener("scroll", scrollToTop);
+    };
+  }, []);
 
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
@@ -150,18 +173,31 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
 
+      { isVisible && (<motion.button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
+        transition={{opacity: {duration: 0.2}}}
+        className="my-12 fixed bottom-4 right-4 bg-[#766c82] text-white font-medium text-3xl p-4 text-white100 rounded-full drop-shadow-x"
+        ><FaArrowUp /></motion.button>)}
+
       {pathname !== "/" && (
         <motion.button
-          whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
-          transition={{ type: "spring", stiffness: 200 }}
-          style={{ position: "fixed", bottom: 16, right: 20 }}
-          className="bg-[#766c82] text-white font-medium p-2 text-white100 px-6 rounded-l-full
- rounded-t-full drop-shadow-xl fixed bottom-4 right-4 z-[10000000]
- flex items-center gap-x-3"
-          onClick={() => navigate("/contact")}
-        >
-          🤔Facing an issue?
-        </motion.button>
+        whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
+        transition={{ type: "spring", stiffness: 200 }}
+        style={{
+          position: "fixed",
+          bottom: 16, 
+          right: 20, 
+          zIndex: 10000000,
+        }}
+        className="bg-[#766c82] 
+        text-white font-medium p-2 text-white100 px-6 rounded-l-full
+        rounded-t-full drop-shadow-xl flex items-center gap-x-3"
+        onClick={handleFacingIssue}
+      >
+        🤔Facing an issue?
+      </motion.button>
+      
       )}
     </div>
   );
