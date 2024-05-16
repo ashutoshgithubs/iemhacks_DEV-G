@@ -1,0 +1,15 @@
+name: pr_Greetings
+
+on: [pull_request_target]
+
+jobs:
+  greetings:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: KeisukeYamashita/create-comment@v1
+        with:
+          comment: |
+            Thank you for submitting this pull request. 
+            We will review the changes and get in contact with you as soon as possible.
