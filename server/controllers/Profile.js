@@ -119,7 +119,6 @@ exports.getUserDetails = async (request, response) => {
 //Update Profile Pic
 exports.updateDisplayPicture = async (req, res) => {
   try {
-    console.log("upload_req", req)
     const displayPicture = req.files.displayPicture;
     const userId = req.user.id;
     const image = await uploadFileToCloudinary(
