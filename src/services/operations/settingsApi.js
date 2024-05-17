@@ -10,9 +10,10 @@ const {
   UPDATE_PROFILE_API,
   CHANGE_PASSWORD_API,
   DELETE_PROFILE_API,
+  REMOVE_DISPLAY_PICTURE_API
 } = settingsEndpoints;
 
-export function updateDisplayPicture(token, formData) {
+export function updateDisplayPicture(token, formData, setImageData) {
   //console.log("Updated Profile pic token: ", token);
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
@@ -37,11 +38,38 @@ export function updateDisplayPicture(token, formData) {
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
+      setImageData({url: response.data.imageUrl, public_id: response.data.public_id});
       toast.success("Display Picture Updated Successfully");
       dispatch(setUser(response.data.data));
     } catch (error) {
       console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error);
       toast.error("Could Not Update Display Picture");
+    }
+    toast.dismiss(toastId);
+  };
+}
+
+export function removeProfilePicture(token, public_id) {
+  return async (dispatch) => {
+    const toastId = toast.loading("Loading...");
+
+    try {
+      const response = await apiConnector(
+        "PUT",
+        REMOVE_DISPLAY_PICTURE_API,
+        { public_id },
+        {
+          Authorization: `Bearer ${token}`,
+        },
+      );
+
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      toast.success("Display Picture Removed Successfully");
+      dispatch(setUser(response.data.data));
+    } catch (error) {
+      toast.error("Could Not Remove Display Picture");
     }
     toast.dismiss(toastId);
   };

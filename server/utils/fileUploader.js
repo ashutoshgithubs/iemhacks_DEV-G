@@ -21,3 +21,10 @@ exports.uploadFileToCloudinary = async (file, folder, height, quality) => {
     console.log("ERROR IS: ", error);
   }
 };
+
+exports.removeFileFromCloudinary = async (public_id) => {
+  await cloudinary.uploader.destroy(public_id, function(error,result) {
+    console.log(result, error) })
+    .then(resp => console.log("removed succesfull", resp))
+    .catch(_err=> console.log("Something went wrong, please try again later."));
+}
