@@ -24,6 +24,10 @@ const Resources = [
 const Plans = ["Paid memberships", "For students", "Business solutions"];
 const Community = ["Forums", "Chapters", "Events"];
 
+const handleClick = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const Footer = () => {
   return (
     <div className="bg-richblack-800">
@@ -43,7 +47,8 @@ const Footer = () => {
                       key={i}
                       className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
                     >
-                      <Link to={ele.toLowerCase()}>{ele}</Link>
+                      <Link to={`/${ele.toLowerCase()}`} scroll={false}>
+                          <a onClick={handleClick}>{ele}</a></Link>
                     </div>
                   );
                 })}
