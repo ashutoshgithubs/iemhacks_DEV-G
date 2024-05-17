@@ -50,6 +50,11 @@ function App() {
 
   const [isVisible, setisVisible] = useState(false);
 
+  const handleFacingIssue = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/contact")
+  }
+
   const scrollToTop =() => {
     if (window.scrollY > 200) {
       setisVisible(true);
@@ -66,14 +71,78 @@ function App() {
   }, []);
 
   return (
-	
-		<div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
-			{pathname !== "/" && <Navbar />}
-			<Routes>
-				<Route path="/" element={<TopHome />} />
-				<Route path="/home" element={<Home />} />
-				<Route path="/catalog/:catalogName" element={<Catalog />} />
-				<Route path="/courses/:courseId" element={<CourseBuyPage />} />
+    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
+      {pathname !== "/" && <Navbar />}
+      <Routes>
+        <Route path="/" element={<TopHome />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/catalog/:catalogName" element={<Catalog />} />
+        <Route path="/courses/:courseId" element={<CourseBuyPage />} />
+        <Route
+          path="/signup"
+          element={
+            <OpenRoute>
+              <Signup />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <OpenRoute>
+              <Login />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/verify-email"
+          element={
+            <OpenRoute>
+              <VarifyEmail />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/forgot-password"
+          element={
+            <OpenRoute>
+              <ForgotPassword />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/update-password/:id"
+          element={
+            <OpenRoute>
+              <UpdatePassword />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+              <About />
+          }
+        />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route
+          element={
+            <PrivatePath>
+              <Dashboard />
+            </PrivatePath>
+          }
+        />
+          <Route path="/dashboard/my-profile" element={<Myprofile />} />
+          <Route path="/dashboard/Settings" element={<Settings />} />
+          {user?.accountType === ACCOUNT_TYPE.STUDENT && (
+            <>
+              <Route
+                path="/dashboard/enrolled-courses"
+                element={<EnrolledCourses />}
+              />
+              <Route path="dashboard/cart" element={<Cart />} />
+            </>
+          )}
 
 				<Route
 					path="/signup"
@@ -206,12 +275,14 @@ function App() {
 					className="bg-[#766c82] 
         text-white font-medium p-2 text-white100 px-6 rounded-l-full
         rounded-t-full drop-shadow-xl flex items-center gap-x-3"
-					onClick={() => navigate("/contact")}>
-					🤔Facing an issue?
-				</motion.button>
-			)}
-		</div>
-	);
+        onClick={handleFacingIssue}
+      >
+        🤔Facing an issue?
+      </motion.button>
+      
+      )}
+    </div>
+  );
 }
 
 export default App;
