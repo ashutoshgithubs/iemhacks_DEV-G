@@ -27,7 +27,7 @@ exports.resetPasswordToken = async (request, response) => {
       { new: true }
     );
     //Create an Url
-    const url = `http://localhost:3000/update-password/${token}`;
+    const url = `https://edtech-dev-g-frontend.vercel.app/update-password/${token}`;
     //Send a mail
     await mailSender(email, "Reset Password Link", `Link: ${url}`);
     //return response
