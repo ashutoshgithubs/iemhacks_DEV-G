@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const Profile = require("../models/Profile");
-const { uploadFileToCloudinary } = require("../utils/fileUploader");
+const { uploadFileToCloudinary, removeFileFromCloudinary } = require("../utils/fileUploader");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const CourseProgress = require("../models/CourseProgress");
@@ -137,6 +137,8 @@ exports.updateDisplayPicture = async (req, res) => {
       success: true,
       message: `Image Updated successfully`,
       data: updatedProfile,
+      public_id: image.public_id,
+      imageUrl : image.url
     });
   } catch (error) {
     console.log("Image uploading error: ", error);
@@ -146,6 +148,31 @@ exports.updateDisplayPicture = async (req, res) => {
     });
   }
 };
+
+exports.removeProfilePicture = async (req, res) => {
+  try {
+    //remove file from cloudinary 
+    await removeFileFromCloudinary(req.body.public_id);
+    //remove file from db
+    const user = await User.findById({_id : req.user.id});
+    const updatedProfile = await User.findByIdAndUpdate(
+      { _id: req.user.id },
+      { image: `https://api.dicebear.com/5.x/initials/svg?seed=${user.firstName} ${user.lastName}`},
+      { new: true }
+    );
+    res.send({
+      success: true,
+      message: `Image Removed successfully`,
+      data: updatedProfile,
+    });
+  } catch (error) {
+    console.log("Image removing error: ", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+}
 
 exports.getEnrolledCourses = async (req, res) => {
   try {
