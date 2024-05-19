@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsChevronDown } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
-import * as Icons from "react-icons/vsc";
 import { logout } from "../../services/operations/authApi";
-import { VscSignOut } from "react-icons/vsc";
+import styles from "./Navbar.module.css"; 
 
 // import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { NavbarLinks } from "../../data/navbar-links";
@@ -15,7 +14,7 @@ import { category } from "../../services/apis";
 import { ACCOUNT_TYPE } from "../../utils/constants";
 import LogoutModal from "./LogoutModal";
 import ProfileDropDown from "../core/auth/ProfileDropDown";
-
+import { InfinitySpin } from 'react-loader-spinner';
 // import {ImCross} from "react-icons/im"
 export default function SmallScreenNavbar({ handleCrossButton, isClose }) {
   const { token } = useSelector((state) => state.auth);
@@ -249,7 +248,14 @@ export default function SmallScreenNavbar({ handleCrossButton, isClose }) {
                     <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
                       <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                       {loading ? (
-                        <p className="text-center">Loading...</p>
+                       <div className={styles.dropdownMenu}>
+                             <InfinitySpin
+                           visible={true}
+                           width="200"
+                           color="#ffd60a"
+                           ariaLabel="infinity-spin-loading"
+                          />
+                            </div>
                       ) : subLinks.length ? (
                         <>
                           {subLinks
