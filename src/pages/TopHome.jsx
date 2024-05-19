@@ -173,6 +173,64 @@ export default function TopHome() {
   const handleMouseLeave3 = () => setIsHovered3(false);
   const handleMouseEnter4 = () => setIsHovered4(true);
   const handleMouseLeave4 = () => setIsHovered4(false);
+
+  const img = [
+    {
+      "src" : lalit , 
+      "fname" : "Lalit" , 
+      "lname" : "Sharma" , 
+      "pos1" : "iOS" , 
+      "pos2" : "Developer" , 
+      "mouseE" : handleMouseEnter , 
+      "mouseL" : handleMouseLeave , 
+      "linkedin" : "https://www.linkedin.com/in/lalit-s/",
+      "hover" : isHovered 
+    } , 
+    {
+      "src" : chaitanya , 
+      "fname" : "Chaitanya" , 
+      "lname" : "Anand" , 
+      "pos1" : "Software" , 
+      "pos2" : "Developer" , 
+      "mouseE" : handleMouseEnter1 , 
+      "mouseL" : handleMouseLeave1 , 
+      "linkedin" : "https://www.linkedin.com/in/chaitanyaanand12/",
+      "hover" : isHovered1
+    },
+    {
+      "src" : nikhil , 
+      "fname" : "Nikhil" , 
+      "lname" : "Raj" , 
+      "pos1" : "FrontEnd" , 
+      "pos2" : "Developer" , 
+      "mouseE" : handleMouseEnter2 , 
+      "mouseL" : handleMouseLeave2 , 
+      "linkedin" : "https://www.linkedin.com/in/nikhil-raj-291b50265/",
+      "hover" : isHovered2
+    },
+    {
+      "src" : bipul , 
+      "fname" : "Bipul" , 
+      "lname" : "Rahi" , 
+      "pos1" : "Backend" , 
+      "pos2" : "Developer" , 
+      "mouseE" : handleMouseEnter3 , 
+      "mouseL" : handleMouseLeave3 , 
+      "linkedin" : "https://www.linkedin.com/in/bipulrahi/",
+      "hover" : isHovered3
+    },
+    {
+      "src" : ashu , 
+      "fname" : "Ashutosh" , 
+      "lname" : "Kumar" , 
+      "pos1" : "Fullstack" , 
+      "pos2" : "Developer" , 
+      "mouseE" : handleMouseEnter4 , 
+      "mouseL" : handleMouseLeave4 , 
+      "linkedin" : "https://www.linkedin.com/in/ashutoshkr01/",
+      "hover" : isHovered4
+    },
+  ];
   return (
     <div className="text-white flex flex-col w-full h-[100vh] relative">
       <motion.div
@@ -284,136 +342,34 @@ export default function TopHome() {
           className=" mx-auto md:max-w-[60%] px-4 py-3 flex flex-col sm:flex-row gap-x-8 items-center rounded-xl border border-red-50 hover:border-red-600 glassEffect "
         >
           <div className="flex flex-row items-center justify-center">
+          {img.map((items) =>(
             <a
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="-mr-4 relative"
-              href="https://www.linkedin.com/in/lalit-s/"
-            >
-              <img
-                alt="Lalit sharma "
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={items.mouseE}
+            onMouseLeave={items.mouseL}
+            className="-mr-4 relative"
+            href={items.linkedin}
+          >
+             <img
+                alt={items.fname+" "+ items.lname}
                 loading="lazy"
                 width="100"
                 height="100"
                 decoding="async"
                 className="object-cover rounded-full w-10 h-10 sm:h-12 sm:w-12 border-2 group-hover:scale-110 group-hover:z-300 border-white transition duration-500"
-                src={lalit}
+                src={items.src}
               />
-              {isHovered && (
+              {items.hover && (
                 <Developer
-                  fName={"Lalit"}
-                  lName={"Sharma"}
-                  position1={"iOS"}
-                  position2={"Developer"}
+                  fName={items.fname}
+                  lName={items.lname}
+                  position1={items.pos1}
+                  position2={items.pos2}
                 />
               )}
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={handleMouseEnter1}
-              onMouseLeave={handleMouseLeave1}
-              className="-mr-4 relative"
-              href="https://www.linkedin.com/in/chaitanyaanand12/"
-            >
-              <img
-                alt="chaitanya "
-                loading="lazy"
-                width="100"
-                height="100"
-                decoding="async"
-                className="object-cover rounded-full w-10 h-10 sm:h-12 sm:w-12 border-2 group-hover:scale-110 group-hover:z-30 border-white transition duration-500"
-                src={chaitanya}
-              />
-              {isHovered1 && (
-                <Developer
-                  fName={"Chaitanya"}
-                  lName={"Anand"}
-                  position1={"Software"}
-                  position2={"Developer"}
-                />
-              )}
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={handleMouseEnter2}
-              onMouseLeave={handleMouseLeave2}
-              class="-mr-4 relative"
-              href="https://www.linkedin.com/in/nikhil-raj-291b50265/"
-            >
-              <img
-                alt="Nikhil"
-                loading="lazy"
-                width="100"
-                height="100"
-                decoding="async"
-                className="object-cover rounded-full w-10 h-10 sm:h-12 sm:w-12 border-2 group-hover:scale-110 group-hover:z-30 border-white transition duration-500"
-                src={nikhil}
-              />
-              {isHovered2 && (
-                <Developer
-                  fName={"Nikhil"}
-                  lName={"Raj"}
-                  position1={"FrontEnd"}
-                  position2={"Developer"}
-                />
-              )}
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={handleMouseEnter3}
-              onMouseLeave={handleMouseLeave3}
-              class="-mr-4 relative "
-              href="https://www.linkedin.com/in/bipulrahi/"
-            >
-              <img
-                alt="Bipul"
-                loading="lazy"
-                width="100"
-                height="100"
-                decoding="async"
-                className=" object-cover rounded-full w-10 h-10 sm:h-12 sm:w-12 border-2 group-hover:scale-110 group-hover:z-30 border-white transition duration-500"
-                src={bipul}
-              />
-              {isHovered3 && (
-                <Developer
-                  fName={"Bipul"}
-                  lName={"Rahi"}
-                  position1={"Backend"}
-                  position2={"Developer"}
-                />
-              )}
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={handleMouseEnter4}
-              onMouseLeave={handleMouseLeave4}
-              class="-mr-4 relative "
-              href="https://www.linkedin.com/in/ashutoshkr01/"
-            >
-              <img
-                alt="Ashu bhai "
-                loading="lazy"
-                width="100"
-                height="100"
-                decoding="async"
-                className=" object-cover rounded-full w-10 h-10 sm:h-12 sm:w-12 border-2 group-hover:scale-110 group-hover:z-30 border-white transition duration-500"
-                src={ashu}
-              />
-              {isHovered4 && (
-                <Developer
-                  fName={"Ashutosh"}
-                  lName={"Kumar"}
-                  position1={"Fullstack"}
-                  position2={"Developer"}
-                />
-              )}
-            </a>
+          </a>
+          ))}
           </div>
           <motion.p
             variants={containerVariants2}
