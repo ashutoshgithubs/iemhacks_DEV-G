@@ -1,0 +1,38 @@
+/* Navbar.module.css */
+.navbarContainer {
+    display: flex;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #333;
+  }
+  
+  .navbarContent {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .dropdownMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .errorMessage {
+    color: rgb(16, 16, 15);
+    text-align: center;
+  }
+  

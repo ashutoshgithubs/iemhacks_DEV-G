@@ -12,17 +12,9 @@ import { ACCOUNT_TYPE } from "../../utils/constants";
 import { category } from "../../services/apis";
 import { ImCross } from "react-icons/im";
 import SmallScreenNavbar from "./SmallScreenNavbar";
+import { InfinitySpin } from 'react-loader-spinner';
+import styles from "./Navbar.module.css"; // Import the CSS module
 
-// const subLink = [
-//   {
-//     title: "Python",
-//     path: "/catalog/python",
-//   },
-//   {
-//     title: "Web-development",
-//     path: "/catalog/web-development",
-//   },
-// ];
 export default function Navbar() {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
@@ -33,21 +25,21 @@ export default function Navbar() {
     return matchPath(route, location.pathname);
   };
 
-  //Fetch all categories
+  // Fetch all categories
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const [isClose, setIsClose] = useState(false);
+
   const handleCrossButton = () => {
-    isClose = isClose ? setIsClose(false) : setIsClose(true);
-    // smallScreen = smallScreen ? setSmallScreen(false) : setSmallScreen(true);
+    setIsClose(!isClose);
   };
+
   useEffect(() => {
     (async () => {
       setLoading(true);
       try {
         const response = await apiConnector("GET", category.CATEGORY_API);
-        console.log("Category response print here : ", response.data.data);
+        console.log("Category response print here: ", response.data.data);
         setSubLinks(response.data.data);
       } catch (error) {
         console.log("Could not fetch Categories.", error);
@@ -57,13 +49,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700">
-      <div className="flex w-11/12 max-w-maxContent items-center justify-between">
+    <div className={styles.navbarContainer}>
+      <div className={styles.navbarContent}>
         <Link to="/">
           <img src={logo} alt="logo" width={160} height={42} loading="lazy" />
         </Link>
         <nav className="hidden md:block">
-          <ul className="flex gap-x-6 text-richblack-25 ">
+          <ul className="flex gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
@@ -73,7 +65,14 @@ export default function Navbar() {
                     <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
                       <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
                       {loading ? (
-                        <p className="text-center">Loading...</p>
+                        <div className={styles.dropdownMenu}>
+                          <InfinitySpin
+                           visible={true}
+                           width="200"
+                           color="#ffd60a"
+                           ariaLabel="infinity-spin-loading"
+                          />
+                        </div>
                       ) : subLinks?.length ? (
                         <>
                           {subLinks
@@ -92,7 +91,7 @@ export default function Navbar() {
                             ))}
                         </>
                       ) : (
-                        <p className="text-center">No Courses Found</p>
+                        <p className={styles.errorMessage}>No Courses Found</p>
                       )}
                     </div>
                   </div>
@@ -145,18 +144,13 @@ export default function Navbar() {
             <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
           </button>
         ) : (
-          <button className=" mr-4 md:hidden " onClick={handleCrossButton}>
-            <ImCross
-              fontSize={24}
-              fill="#AFB2BF"
-              className="pr-4 text-4xl fixed"
-            />
+          <button className="mr-4 md:hidden" onClick={handleCrossButton}>
+            <ImCross fontSize={24} fill="#AFB2BF" className="pr-4 text-4xl fixed" />
           </button>
         )}
         {isClose && (
           <SmallScreenNavbar
             isClose={isClose}
-            // setIsClose={setIsClose}
             handleCrossButton={handleCrossButton}
           />
         )}
