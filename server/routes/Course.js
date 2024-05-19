@@ -10,6 +10,7 @@ const {
   getFullCourseDetails,
   getInstructorCourses,
   deleteCourse,
+  getfilteredCourses,
 } = require("../controllers/Courses");
 
 //Import Category controllers
@@ -63,6 +64,7 @@ router.post("/deleteSection", auth, isInstructor, deleteSection);
 router.post("/addSubSection", auth, isInstructor, createSubSection);
 router.post("/updateSubSection", auth, isInstructor, updateSubSection);
 router.post("/deleteSubSection", auth, isInstructor, deleteSubSection);
+router.post("/getFilteredCourses", getfilteredCourses);
 
 router.get("/getAllCourses", getAllCourses);
 router.post("/getCourseDetails", getCourseDetails);

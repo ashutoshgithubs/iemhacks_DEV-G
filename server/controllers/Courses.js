@@ -436,3 +436,44 @@ exports.deleteCourse = async (req, res) => {
     });
   }
 };
+//Get filtered courses accoring to price and category
+exports.getfilteredCourses = async (req, res) => {
+  try {
+    const { price, category } = req.body;
+    // const courses=await Course.find({price:{$lte:price}});
+    if (!price) {
+      price = 0;
+    }
+    let courses;
+    if (!category) {
+      console.log("category not found");
+      courses = await Course.find({ price: { $lte: price } })
+        .populate([
+          { path: "instructor", select: "firstName lastName", model: User },
+        ])
+        .select("courseName price thumbnail instructor");
+    } else {
+      console.log("category found");
+      courses = await Course.find({
+        price: { $lte: price },
+        category: category,
+      })
+        .populate([
+          { path: "instructor", select: "firstName lastName", model: User },
+        ])
+        .select("courseName price thumbnail instructor");
+    }
+
+    res.status(200).json({
+      success: true,
+      data: courses,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+      error: error.message,
+    });
+  }
+};
