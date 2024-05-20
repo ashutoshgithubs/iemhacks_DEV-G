@@ -32,6 +32,8 @@ import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
 import TopHome from "./pages/TopHome";
 import { motion } from "framer-motion";
+import Room from "./pages/Room";
+import Stream from "./pages/Stream";
 
 function App() {
   const dispatch = useDispatch();
@@ -129,7 +131,7 @@ function App() {
               <Dashboard />
             </PrivatePath>
           }
-        >
+        />
           <Route path="/dashboard/my-profile" element={<Myprofile />} />
           <Route path="/dashboard/Settings" element={<Settings />} />
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
@@ -142,55 +144,135 @@ function App() {
             </>
           )}
 
-          {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
-            <>
-              <Route path="dashboard/instructor" element={<Instructor />} />
-              <Route path="dashboard/add-course" element={<AddCourse />} />
-              <Route path="dashboard/my-courses" element={<MyCourses />} />
-              <Route
-                path="dashboard/edit-course/:courseId"
-                element={<EditCourse />}
-              />
-            </>
-          )}
-        </Route>
-        <Route
+				<Route
+					path="/signup"
+					element={
+						<OpenRoute>
+							<Signup />
+						</OpenRoute>
+					}
+				/>
+				<Route
+					path="/login"
+					element={
+						<OpenRoute>
+							<Login />
+						</OpenRoute>
+					}
+				/>
+				<Route
+					path="/verify-email"
+					element={
+						<OpenRoute>
+							<VarifyEmail />
+						</OpenRoute>
+					}
+				/>
+				<Route
+					path="/forgot-password"
+					element={
+						<OpenRoute>
+							<ForgotPassword />
+						</OpenRoute>
+					}
+				/>
+				<Route
+					path="/update-password/:id"
+					element={
+						<OpenRoute>
+							<UpdatePassword />
+						</OpenRoute>
+					}
+				/>
+				<Route
+					path="/about"
+					element={
+						<OpenRoute>
+							<About />
+						</OpenRoute>
+					}
+				/>
+				<Route path="/contact" element={<ContactUs />} />
+				<Route
+					element={
+						<PrivatePath>
+							<Dashboard />
+						</PrivatePath>
+					}>
+					<Route path="/dashboard/my-profile" element={<Myprofile />} />
+					<Route path="/dashboard/Settings" element={<Settings />} />
+					{user?.accountType === ACCOUNT_TYPE.STUDENT && (
+						<>
+							<Route
+								path="/dashboard/enrolled-courses"
+								element={<EnrolledCourses />}
+							/>
+							<Route path="dashboard/cart" element={<Cart />} />
+						</>
+					)}
+
+					{user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+						<>
+							<Route path="dashboard/instructor" element={<Instructor />} />
+							<Route path="dashboard/add-course" element={<AddCourse />} />
+							<Route path="dashboard/my-courses" element={<MyCourses />} />
+							<Route
+								path="dashboard/edit-course/:courseId"
+								element={<EditCourse />}
+							/>
+							<Route path="/room" element={<Room />} />
+						</>
+					)}
+				</Route>
+				        <Route
+          path="/stream/:streamId"
           element={
-            <PrivatePath>
-              <CourseDekho />
-            </PrivatePath>
+            <div className="w-screen h-screen bg-white flex justify-center items-center">
+              <Stream />
+            </div>
           }
-        >
-          {user?.accountType === ACCOUNT_TYPE.STUDENT && (
-            <>
-              <Route
-                path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId"
-                element={<VideoDetails />}
-              />
-            </>
-          )}
-        </Route>
-        <Route path="*" element={<Error />} />
-      </Routes>
+        />
 
-      { isVisible && (<motion.button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
-        transition={{opacity: {duration: 0.2}}}
-        className="my-12 fixed bottom-4 right-4 bg-[#766c82] text-white font-medium text-3xl p-4 text-white100 rounded-full drop-shadow-x"
-        ><FaArrowUp /></motion.button>)}
 
-      {pathname !== "/" && (
-        <motion.button
-        whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
-        transition={{ type: "spring", stiffness: 200 }}
-        style={{
-          position: "fixed",
-          bottom: 16, 
-          right: 20, 
-          zIndex: 10000000,
-        }}
-        className="bg-[#766c82] 
+				<Route
+					element={
+						<PrivatePath>
+							<CourseDekho />
+						</PrivatePath>
+					}>
+					{user?.accountType === ACCOUNT_TYPE.STUDENT && (
+						<>
+							<Route
+								path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId"
+								element={<VideoDetails />}
+							/>
+						</>
+					)}
+				</Route>
+				<Route path="*" element={<Error />} />
+			</Routes>
+
+			{isVisible && (
+				<motion.button
+					onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+					whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
+					transition={{ opacity: { duration: 0.2 } }}
+					className="my-12 fixed bottom-4 right-4 bg-[#766c82] text-white font-medium text-3xl p-4 text-white100 rounded-full drop-shadow-x">
+					<FaArrowUp />
+				</motion.button>
+			)}
+
+			{pathname !== "/" && (
+				<motion.button
+					whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
+					transition={{ type: "spring", stiffness: 200 }}
+					style={{
+						position: "fixed",
+						bottom: 16,
+						right: 20,
+						zIndex: 10000000,
+					}}
+					className="bg-[#766c82] 
         text-white font-medium p-2 text-white100 px-6 rounded-l-full
         rounded-t-full drop-shadow-xl flex items-center gap-x-3"
         onClick={handleFacingIssue}
