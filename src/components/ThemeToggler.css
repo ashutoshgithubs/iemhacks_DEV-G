@@ -1,0 +1,42 @@
+/* src/components/ThemeToggler.css */
+.toggle-container {
+    width: 60px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    position: relative;
+    margin-left: 92%;
+}
+
+.toggle-circle {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    position: absolute;
+}
+
+.toggle-circle.light {
+    transform: translateX(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-circle.dark {
+    transform: translateX(30px);
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-container.light {
+    background-color: #ffcc00;
+}
+
+.toggle-container.dark {
+    background-color: #555;
+}

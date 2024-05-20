@@ -165,3 +165,32 @@ details > summary::-webkit-details-marker {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
+
+/* src/App.css */
+.app {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.app.light {
+  background-color: white;
+  color: black;
+}
+
+.app.dark {
+  background-color: black;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  /* margin-left: 300px; */
+}
+
+button:focus {
+  outline: none;
+}
