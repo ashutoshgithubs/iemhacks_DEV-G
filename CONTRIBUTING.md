@@ -15,9 +15,9 @@ We welcome contributions from participants of the GSSOC'24 program! Below are so
 We have categorized our issues and labeled them with appropriate tags to help contributors find tasks that match their skills and interests. For GSSoC'24 participants, we have included specific labels indicating the difficulty level of each issue:
 
 - `gssoc`: Indicates that the issue is suitable for GSSoC'24 participants.
-- `level-1`: Represents beginner-friendly tasks with minimal complexity.
-- `level-2`: Represents intermediate-level tasks with moderate complexity.
-- `level-3`: Represents advanced tasks with higher complexity.
+- `level1`: Represents beginner-friendly tasks with minimal complexity.
+- `level2`: Represents intermediate-level tasks with moderate complexity.
+- `level3`: Represents advanced tasks with higher complexity.
 
 Please feel free to explore our list of issues and choose one that aligns with your skills and interests. If you have any questions or need assistance, don't hesitate to reach out to us.
 
@@ -31,13 +31,13 @@ Please include images and browser-specific information if the bug is related to 
 
 ## Git and GitHub Workflow
 
-The preferred workflow for contributing to a repository is to fork the main repository on GitHub, clone, and develop on a new branch.
+The preferred workflow for contributing to a repository is to fork the main repository on GitHub, clone and develop on a new branch.
 
 If you aren't familiar with how to work with Github or would like to learn it, here is [a great tutorial](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github).
 
 Feel free to use any approach while creating a PR. Here are a few suggestions from our team:
 
-- If you are not sure whether your changes will be accepted or want to discuss the method before delving into it, please create an issue and ask.
+- If you are unsure whether your changes will be accepted or want to discuss the method before delving into it, please create an issue and ask.
 - Clone the repo locally (or continue editing directly in GitHub if the change is small). Checkout
   out the branch that you created.
 - Create a draft PR with a small initial commit. Here's how you can [create a draft pull request.](https://github.blog/2019-02-14-introducing-draft-pull-requests/).
@@ -56,7 +56,7 @@ Feel free to use any approach while creating a PR. Here are a few suggestions fr
   `git checkout DevG_Contribute`
 
 - **Make Your Changes**:
-- Now you're ready to dive into the code! Open the project in your favorite code editor.
+- Now you're ready to dive into the code! Open the project in your favourite code editor.
 - Make your changes to the files following the project's coding conventions. (If there are no specific conventions documented, follow common JavaScript and React best practices.)
 
 - **Test the change you made**:
@@ -81,7 +81,7 @@ Feel free to use any approach while creating a PR. Here are a few suggestions fr
 - **Create a Pull Request**:
 
 - Go to your forked repository on GitHub.
-- Click on the "Pull requests" tab and then "New pull request" button.
+- Click on the "Pull requests" tab and then the "New pull request" button.
 - Select the branch containing your changes from the "Head" branch dropdown.
 - Leave the "Base" branch as "DevG_Contribute".
 - Write a clear and concise title and description explaining your changes and their purpose.
