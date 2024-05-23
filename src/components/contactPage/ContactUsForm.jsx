@@ -15,7 +15,6 @@ const ContactUsForm = () => {
   } = useForm();
 
   const submitContactForm = async (data) => {
-    // console.log("Form Data - ", data)
     try {
       setLoading(true);
       const response = await apiConnector(
@@ -23,14 +22,14 @@ const ContactUsForm = () => {
         contactusEndpoint.CONTACT_US_API,
         data
       );
-      const response2 = await apiConnector(
-        "POST",
-        contactusEndpoint.COMPLAIN,
-        data
-      );
-      toast.success("Email sent successfully");
+
+      if (response.data.success) {
+        toast.success("Email sent successfully");
+      } else {
+        toast.error(response.data.message || "Couldn't send email");
+      }
+      
       console.log("Email Response - ", response);
-      console.log("Email Response - ", response2);
       setLoading(false);
     } catch (error) {
       toast.error("Couldn't send email");
@@ -131,9 +130,9 @@ const ContactUsForm = () => {
               <div className="flex w-[81px] flex-col gap-2">
                 <select
                   type="text"
-                  name="firstname"
-                  id="firstname"
-                  placeholder="Enter first name"
+                  name="countrycode"
+                  id="countrycode"
+                  placeholder="Country Code"
                   style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                   }}
@@ -143,7 +142,7 @@ const ContactUsForm = () => {
                   {CountryCode.map((ele, i) => {
                     return (
                       <option key={i} value={ele.code}>
-                        {ele.code} -{ele.country}
+                        {ele.code} - {ele.country}
                       </option>
                     );
                   })}
@@ -152,8 +151,8 @@ const ContactUsForm = () => {
               <div className="flex w-[calc(100%-90px)] flex-col gap-2">
                 <input
                   type="number"
-                  name="phonenumber"
-                  id="phonenumber"
+                  name="phoneNo"
+                  id="phoneNo"
                   placeholder="12345 67890"
                   style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
@@ -204,10 +203,8 @@ const ContactUsForm = () => {
             disabled={loading}
             type="submit"
             className={`rounded-md bg-yellow-50 px-6 py-3 text-center text-[13px] font-bold text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)] 
-         ${
-           !loading &&
-           "transition-all duration-200 hover:scale-95 hover:shadow-none"
-         }  disabled:bg-richblack-500 sm:text-[16px] `}
+              ${!loading && "transition-all duration-200 hover:scale-95 hover:shadow-none"}  
+              disabled:bg-richblack-500 sm:text-[16px]`}
           >
             Send Message
           </button>
