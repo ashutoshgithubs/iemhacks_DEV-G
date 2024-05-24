@@ -1,6 +1,5 @@
 const { contactUsEmail } = require("../mailTemplate/contactFormRes");
 const mailSender = require("../utils/mailSender");
-const axios = require("axios");
 exports.complain = async (request, response) => {
   const { email, firstname, lastname, message, phoneNo, countrycode } =
     request.body;
@@ -9,9 +8,10 @@ exports.complain = async (request, response) => {
   const verifyEmailUrl = `https://api.zerobounce.net/v2/validate?api_key=${ZEROBOUNCE_API_KEY}&email=${email}`;
 
   try {
-     // Verify email using ZeroBounce
-    const verifyResponse = await axios.get(verifyEmailUrl);
-    const { status } = verifyResponse.data;
+    // Verify email using ZeroBounce with fetch API
+    const verifyResponse = await fetch(verifyEmailUrl);
+    const verifyData = await verifyResponse.json();
+    const { status } = verifyData;
 
     if (status !== "valid") {
       return response.json({
