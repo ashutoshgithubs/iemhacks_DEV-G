@@ -172,12 +172,13 @@ function App() {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
-
+<div style={{display:'flex',margin:'5%'}}>
       { isVisible && (<motion.button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
         transition={{opacity: {duration: 0.2}}}
-        className="my-12 fixed bottom-4 right-4 bg-[#766c82] text-white font-medium text-3xl p-4 text-white100 rounded-full drop-shadow-x"
+        style={{marginTop:2}}
+        className="fixed bottom-4 right-4 bg-[#766c82] text-white font-small text-3xl p-4 text-white100 rounded-full drop-shadow-x"
         ><FaArrowUp /></motion.button>)}
 
       {pathname !== "/" && (
@@ -187,7 +188,7 @@ function App() {
         style={{
           position: "fixed",
           bottom: 16, 
-          right: 20, 
+          marginTop:2,
           zIndex: 10000000,
         }}
         className="bg-[#766c82] 
@@ -199,6 +200,7 @@ function App() {
       </motion.button>
       
       )}
+      </div>
     </div>
   );
 }
