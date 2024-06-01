@@ -63,9 +63,9 @@ export default function Navbar() {
           <img src={logo} alt="logo" width={160} height={42} loading="lazy" />
         </Link>
         <nav className="hidden md:block">
-          <ul className="flex gap-x-6 text-richblack-25 ">
+          <ul className="flex gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
-              <li key={index}>
+              <li key={index} className="hover:scale-95 transition-all duration-200">
                 {link.title === "Catalog" ? (
                   <div className="relative flex items-center gap-2 group">
                     <p>{link.title}</p>
@@ -126,14 +126,14 @@ export default function Navbar() {
           )}
           {token === null && (
             <Link to="/login">
-              <button className="border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md">
+              <button className="border border-richblack-700 bg-yellow-50 hover:scale-95 transition-all duration-200 px-[12px] py-[8px] text-black-800 font-semibold rounded-md">
                 Login
               </button>
             </Link>
           )}
           {token === null && (
             <Link to="/signup">
-              <button className="border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md">
+              <button className="border border-richblack-700 bg-yellow-50 hover:scale-95 transition-all duration-200 px-[12px] py-[8px] text-black-800 font-semibold rounded-md">
                 Sign Up
               </button>
             </Link>
