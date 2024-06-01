@@ -3,7 +3,9 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../../services/operations/authApi";
+import {GoogleLogin} from "react-google-login";
 
+const clientId = "215399466282-brbrrdrrbk12l300mf0trss18jqopfkj.apps.googleusercontent.com";
 function LoginForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,7 +29,12 @@ function LoginForm() {
     e.preventDefault();
     dispatch(login(email, password, navigate));
   };
-
+  const onSuccess = (res) => {
+    console.log("Login Success! current user:", res.profileObj);
+  }
+  const onFailure = (res) =>{
+    console.log("Login failed res:",res);
+  }
   return (
     <form
       onSubmit={submitHandler}
@@ -88,6 +95,8 @@ function LoginForm() {
       >
         Log In
       </button>
+      
+    <GoogleLogin  className="mt-2" clientId={clientId} buttonText="continue with Google" onSuccess={onSuccess} onFailure={onFailure} cookiePolicy={'single_host_origin'} isSignedIn={true}/>
     </form>
   );
 }

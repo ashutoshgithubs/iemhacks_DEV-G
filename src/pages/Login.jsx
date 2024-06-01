@@ -3,6 +3,7 @@ import Template from "../components/core/auth/Template";
 import loginImg from "../assets/Images/login2.jpg";
 
 export default function Login() {
+ 
   return (
     <Template
       title="Welcome Back"
@@ -11,5 +12,7 @@ export default function Login() {
       image={loginImg}
       formType="login"
     />
+  
+   
   );
 }

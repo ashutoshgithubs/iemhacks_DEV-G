@@ -32,8 +32,20 @@ import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
 import TopHome from "./pages/TopHome";
 import { motion } from "framer-motion";
-
+import {gapi} from 'gapi-script';
+const clientId = "215399466282-brbrrdrrbk12l300mf0trss18jqopfkj.apps.googleusercontent.com";
 function App() {
+  useEffect(() =>{
+    function start() {
+      gapi.client.init({
+        clientId:clientId,
+        scope:""
+      })
+    };
+    gapi.load('client:auth2',start);
+  });
+
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.profile);
