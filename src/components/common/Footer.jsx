@@ -57,20 +57,21 @@ const Footer = () => {
                 <Link
                   to="https://twitter.com/Ashubhai_01?t=U7Je9g4gfS3X57ehTeBlrw&s=09"
                   target="_blank"
-                  className="text-gray-400"
-                >
+                  className="text-black bg-white rounded-full px-2 py-2">
                   <BsTwitterX />
                 </Link>
                 <Link
                   to="https://www.linkedin.com/in/ashutoshkr01/"
                   target="_blank"
-                  className="text-gray-400"
+                  className="text-white bg-[#0077b5] rounded-full px-2 py-2"
                 >
                   <FaLinkedin />
                 </Link>
+                <Link className="text-white bg-[#1877F2] rounded-full px-2 py-2" >
                 <FaFacebook />
-
-                <FaYoutube />
+                </Link>
+                <Link className="text-[#FF0000] bg-white rounded-full px-2 py-2">
+                <FaYoutube /></Link>
               </div>
               <div></div>
             </div>
