@@ -177,7 +177,7 @@ function App() {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         whileHover={{ scale: 1.05, originX: 0, color: "#f8e112" }}
         transition={{opacity: {duration: 0.2}}}
-        className="my-12 fixed bottom-4 right-4 bg-[#766c82] text-white font-medium text-3xl p-4 text-white100 rounded-full drop-shadow-x"
+        className="my-12 fixed bottom-2 right-4 bg-[#766c82] text-white font-medium text-xl p-2 text-white100 rounded-full drop-shadow-x"
         ><FaArrowUp /></motion.button>)}
 
       {pathname !== "/" && (
@@ -191,8 +191,8 @@ function App() {
           zIndex: 10000000,
         }}
         className="bg-[#766c82] 
-        text-white font-medium p-2 text-white100 px-6 rounded-l-full
-        rounded-t-full drop-shadow-xl flex items-center gap-x-3"
+        text-white font-medium p-1 text-white100 px-3 rounded-l-full
+        rounded-t-full drop-shadow-xl flex items-center gap-x-2"
         onClick={handleFacingIssue}
       >
         🤔Facing an issue?
