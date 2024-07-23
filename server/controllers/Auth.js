@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const { passwordUpdated } = require("../mailTemplate/passwordUpdate");
 const mailSender = require("../utils/mailSender");
+const { userSignupSchema, userSigninSchema } = require("./ZodValidation");
 
 exports.sendOTP = async (request, response) => {
   try {
@@ -75,20 +76,30 @@ exports.signUp = async (request, response) => {
       contactNumber,
       otp,
     } = request.body;
+
     //validate
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !password ||
-      !confirmPassword ||
-      !otp
-    ) {
+    // if (
+    //   !firstName ||
+    //   !lastName ||
+    //   !email ||
+    //   !password ||
+    //   !confirmPassword ||
+    //   !otp
+    // ) {
+    //   return response.status(403).json({
+    //     success: false,
+    //     message: "All fields are required",
+    //   });
+    // }
+
+    const isValid = userSignupSchema.safeParse(request.body);
+    if(!isValid.success) {
       return response.status(403).json({
         success: false,
-        message: "All fields are required",
-      });
+        message: "Error with credentials format"
+      })
     }
+
     //match password & confirm password
     if (password !== confirmPassword) {
       return response.status(400).json({
@@ -165,12 +176,22 @@ exports.login = async (request, response) => {
     //Fetch email & password from request body
     const { email, password } = request.body;
     //Validate
-    if (!email || !password) {
+    // if (!email || !password) {
+    //   return response.status(403).json({
+    //     success: false,
+    //     message: "All fields are required",
+    //   });
+    // }
+
+    const isValid = userSigninSchema.safeParse(request.body);
+    if(!isValid.success) {
       return response.status(403).json({
         success: false,
-        message: "All fields are required",
-      });
+        message: "Error with credentials format"
+      })
     }
+
+
     //check existing user
     const user = await User.findOne({ email }).populate("additionalDetails");
     if (!user) {
